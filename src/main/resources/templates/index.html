@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wirebarley</title>
+</head>
+
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script th:src="@{/js/index.js}"></script>
+<!-- END Jquery -->
+
+<body>
+    <div>
+        <h1>환율계산</h1><br>
+        송금국가: 미국(USD)<br>
+        수취국가:
+        <select id="countryCombo" onchange="index.init()">
+            <option value="KRW" selected>한국(KRW)</option>
+            <option value="JPY">일본(KRW)</option>
+            <option value="PHP">필리핀(KRW)</option>
+        </select><br>
+        <span id="exchangePrice"></span><br>
+        송금액: <input type="number" id="remittancePrice"> USD<br>
+        <button onclick="index.submit()">Submit</button>
+        <h3 style="color: red" id="resultText"></h3>
+    </div>
+</body>
+<script th:inline="javascript">
+    $(document).ready(function () { index.init(); });
+</script>
+</html>
