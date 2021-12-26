@@ -1,7 +1,7 @@
 FROM amazoncorretto:11.0.13
-EXPOSE 8080
 CMD ["echo","RUNNING COMPLETE"]
-ENTRYPOINT ["java","-jar","build/libs/*.jar"]
+EXPOSE 8080
+ENTRYPOINT ["java","-jar","build/libs/wirebarley-1.0-SNAPSHOT.jar"]
 
 ### Project Build
 #FROM amazoncorretto:11.0.13 AS builder
