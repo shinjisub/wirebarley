@@ -11,9 +11,9 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
-@AutoConfigureMockMvc
 class DemoControllerTest {
 
+/*
     @Autowired
     public MockMvc mvc;
 
@@ -23,4 +23,5 @@ class DemoControllerTest {
                 .andExpect(status().isOk());
     }
 
+*/
 }
