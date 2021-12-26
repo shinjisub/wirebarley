@@ -73,6 +73,7 @@ public class ExchangeInfoServiceImpl implements ExchangeInfoService {
         resultCode = exchange.getBody().getSuccess() ? SUCCESS_CODE : FAIL_CODE;
         logger.info("### ExchangeInfoServiceImpl.callApi Api rtnCode {}", exchange.getStatusCodeValue());
         logger.info("###### ExchangeInfoServiceImpl.callApi getSuccess {}", exchange.getBody().getSuccess());
+        logger.info("###### ExchangeInfoServiceImpl.callApi ExchangeDTO {}", exchange.toString());
 
         if (resultCode == SUCCESS_CODE && exchange.getBody().getError() == null) {
             resultData = modelMapper.map(exchange.getBody().getQuotes(), ExchangeCoutryDTO.class);
