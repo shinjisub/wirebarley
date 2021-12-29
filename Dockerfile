@@ -16,7 +16,7 @@
 FROM amazoncorretto:11.0.13
 #COPY --from=builder build/libs/*.jar app.jar
 EXPOSE 80
-ENTRYPOINT ["java","-jar","build/libs/*.jar"]
+ENTRYPOINT ["java","-jar","./build/libs/*.jar"]
 #ENTRYPOINT ["java","-jar","app.jar"]
 
 
