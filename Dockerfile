@@ -1,7 +1,7 @@
-FROM amazoncorretto:11.0.13
-CMD ["echo","RUNNING COMPLETE"]
-EXPOSE 8080
-ENTRYPOINT ["java","-jar","build/libs/wirebarley-1.0-SNAPSHOT.jar"]
+#FROM amazoncorretto:11.0.13
+#CMD ["echo","RUNNING COMPLETE"]
+#EXPOSE 8080
+#ENTRYPOINT ["java","-jar","build/libs/wirebarley.jar"]
 
 ### Project Build
 #FROM amazoncorretto:11.0.13 AS builder
@@ -13,10 +13,11 @@ ENTRYPOINT ["java","-jar","build/libs/wirebarley-1.0-SNAPSHOT.jar"]
 #RUN chmod 777 ./gradlew
 #RUN  ./gradlew bootJar
 
-#FROM amazoncorretto:11.0.13
+FROM amazoncorretto:11.0.13
 #COPY --from=builder build/libs/*.jar app.jar
-#EXPOSE 8080
-#ENTRYPOINT ["java","-jar","bootJar.jar"]
+EXPOSE 80
+ENTRYPOINT ["java","-jar","build/libs/*.jar"]
+#ENTRYPOINT ["java","-jar","app.jar"]
 
 
 ### MYSQL
