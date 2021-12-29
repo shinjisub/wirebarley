@@ -20,10 +20,3 @@ ADD ${JAR_FILE} wirebarley.jar
 ENV JAVA_OPTS=""
 EXPOSE 80
 ENTRYPOINT ["java","-jar","/wirebarley.jar"]
-
-
-### MYSQL
-#FROM mysql:5.7
-#MAINTAINER camper <vlll3320@gmail.com>
-#EXPOSE 3306
-#CMD ["mysqld"]
