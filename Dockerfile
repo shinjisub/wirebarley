@@ -14,8 +14,12 @@
 #RUN  ./gradlew bootJar
 
 FROM amazoncorretto:11.0.13
+VOLUME /tmp
+ARG JAR_FILE=build/libs/*.jar
+ADD ${JAR_FILE} wirebarley.jar
+ENV JAVA_OPTS=""
 EXPOSE 80
-ENTRYPOINT ["java","-jar","build/libs/wirebarley.jar"]
+ENTRYPOINT ["java","-jar","/wirebarley.jar"]
 
 
 ### MYSQL
